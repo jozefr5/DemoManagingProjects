@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+</head>
+<body>
+<div class="container">
+    <div th:fragment="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
+                    </form>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" th:href="@{/projects}">Project</a></li>
+                        <li><a href="#" th:href="@{/project/new}">Create Project</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+</body>
+</html>
